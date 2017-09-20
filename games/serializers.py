@@ -52,7 +52,8 @@ class GameSerializer(serializers.HyperlinkedModelSerializer):
         'game_category',
         'name',
         'release_date',
-        'played')
+        'played',
+        'owner')
 
 class ScoreSerializer(serializers.HyperlinkedModelSerializer):
     # We want to display all the details for the game
