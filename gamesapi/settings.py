@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'games.apps.GamesConfig',
     'crispy_forms',
     'django_filters',
+    'django_nose',
 ]
 
 MIDDLEWARE = [
@@ -94,6 +95,16 @@ REST_FRAMEWORK = {
         'game-categories': '30/hour',
     }
 }
+
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+
+NOSE_ARGS = [
+    # this option generates a test coverage report
+    '--with-coverage',
+    '--cover-erase',
+    '--cover-inclusive',
+    '--cover-package=games',
+]
 
 WSGI_APPLICATION = 'gamesapi.wsgi.application'
 
